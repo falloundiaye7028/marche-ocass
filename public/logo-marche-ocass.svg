@@ -1,0 +1,105 @@
+<svg width="480" height="140" viewBox="0 0 480 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient vert profond -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a6342"/>
+      <stop offset="100%" stop-color="#042c1d"/>
+    </linearGradient>
+    <!-- Gradient or -->
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd633"/>
+      <stop offset="100%" stop-color="#ff9500"/>
+    </linearGradient>
+    <!-- Gradient or texte -->
+    <linearGradient id="goldText" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffc800"/>
+      <stop offset="100%" stop-color="#ff7a2a"/>
+    </linearGradient>
+    <!-- Ombre douce -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#042c1d" flood-opacity="0.35"/>
+    </filter>
+    <!-- Lueur or -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── BADGE ICÔNE ─────────────────────────────────────── -->
+  <!-- Cercle principal -->
+  <circle cx="70" cy="70" r="65" fill="url(#bgGrad)" filter="url(#shadow)"/>
+  <!-- Anneau décoratif -->
+  <circle cx="70" cy="70" r="62" fill="none" stroke="#ffc800" stroke-width="1.2" opacity="0.3"/>
+  <circle cx="70" cy="70" r="57" fill="none" stroke="#ffc800" stroke-width="0.6" opacity="0.15"/>
+
+  <!-- ── ÉTOILE GÉOMÉTRIQUE ISLAMIQUE (fond décoratif) ── -->
+  <g opacity="0.08" transform="translate(70,70)">
+    <polygon points="0,-38 8,-14 34,-14 13,5 21,30 0,18 -21,30 -13,5 -34,-14 -8,-14" fill="#ffc800"/>
+  </g>
+
+  <!-- ── BOUTIQUE / MARCHÉ ── -->
+  <!-- Sol / base -->
+  <rect x="28" y="90" width="84" height="22" rx="4" fill="url(#goldGrad)" filter="url(#glow)"/>
+
+  <!-- Façade principale -->
+  <rect x="32" y="64" width="76" height="30" rx="3" fill="#0e7d52"/>
+  <rect x="32" y="64" width="76" height="3" fill="url(#goldGrad)"/>
+
+  <!-- Auvent (awning) avec stripes -->
+  <path d="M22 64 Q70 34 118 64 Z" fill="url(#goldGrad)"/>
+  <line x1="37" y1="63" x2="30" y2="64" stroke="#042c1d" stroke-width="2" opacity="0.3"/>
+  <line x1="52" y1="52" x2="44" y2="64" stroke="#042c1d" stroke-width="2" opacity="0.3"/>
+  <line x1="70" y1="45" x2="70" y2="64" stroke="#042c1d" stroke-width="2" opacity="0.3"/>
+  <line x1="88" y1="52" x2="96" y2="64" stroke="#042c1d" stroke-width="2" opacity="0.3"/>
+  <line x1="103" y1="63" x2="110" y2="64" stroke="#042c1d" stroke-width="2" opacity="0.3"/>
+
+  <!-- Porte arrondie (arc mauresque) -->
+  <path d="M58 92 L58 74 Q70 65 82 74 L82 92 Z" fill="#042c1d"/>
+  <path d="M60 92 L60 75 Q70 67 80 75 L80 92 Z" fill="#07402b"/>
+
+  <!-- Fenêtres -->
+  <rect x="36" y="70" width="16" height="13" rx="2" fill="url(#goldGrad)" opacity="0.8"/>
+  <rect x="88" y="70" width="16" height="13" rx="2" fill="url(#goldGrad)" opacity="0.8"/>
+  <line x1="44" y1="70" x2="44" y2="83" stroke="#042c1d" stroke-width="1" opacity="0.4"/>
+  <line x1="96" y1="70" x2="96" y2="83" stroke="#042c1d" stroke-width="1" opacity="0.4"/>
+
+  <!-- Croissant de lune (référence Touba) -->
+  <path d="M63 30 C60 22 68 14 78 17 C70 18 65 25 63 30 Z" fill="url(#goldGrad)" filter="url(#glow)"/>
+  <!-- Étoile à 5 branches -->
+  <polygon points="83,18 85,24 91,24 86,28 88,34 83,30 78,34 80,28 75,24 81,24" fill="url(#goldGrad)" transform="scale(0.55) translate(68,-5)" filter="url(#glow)"/>
+
+  <!-- Point lumineux -->
+  <circle cx="70" cy="90" r="2.5" fill="#ffc800" opacity="0.9"/>
+
+  <!-- ── TEXTE PRINCIPAL ─────────────────────────────────── -->
+  <!-- "MARCHÉ" -->
+  <text x="155" y="62"
+    font-family="'Syne', 'Arial Black', sans-serif"
+    font-size="44"
+    font-weight="900"
+    letter-spacing="-1"
+    fill="white">MARCHÉ</text>
+
+  <!-- "OCASS" avec gradient or -->
+  <text x="157" y="108"
+    font-family="'Syne', 'Arial Black', sans-serif"
+    font-size="44"
+    font-weight="900"
+    letter-spacing="10"
+    fill="url(#goldText)">OCASS</text>
+
+  <!-- Ligne séparatrice décorative -->
+  <rect x="155" y="116" width="290" height="2" rx="1" fill="url(#goldGrad)" opacity="0.4"/>
+
+  <!-- Tagline -->
+  <text x="157" y="133"
+    font-family="'Inter', 'Arial', sans-serif"
+    font-size="11.5"
+    font-weight="500"
+    letter-spacing="4"
+    fill="#1d9c68">PORTAIL COMMERCIAL DE TOUBA</text>
+
+  <!-- Points décoratifs avant tagline -->
+  <circle cx="149" cy="129" r="2.5" fill="#ffc800" opacity="0.7"/>
+</svg>
