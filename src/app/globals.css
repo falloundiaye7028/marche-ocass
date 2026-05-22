@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply font-sans antialiased text-gray-900 bg-white; }
+  * { @apply box-border; }
+  :root { --font-display: 'Syne', sans-serif; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-vert-700 hover:bg-vert-600 text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 shadow-sm;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 bg-or-400 hover:bg-or-300 text-gray-900 font-bold px-5 py-2.5 rounded-xl transition-all duration-200 shadow-sm;
+  }
+  .btn-orange {
+    @apply inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-bold px-5 py-2.5 rounded-xl transition-all duration-200;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-vert-700 text-vert-700 hover:bg-vert-700 hover:text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-200;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-gray-900;
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .section-subtitle { @apply text-gray-500 text-lg leading-relaxed; }
+  .input-field {
+    @apply w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-vert-500 focus:border-transparent transition-all;
+  }
+  .card { @apply bg-white rounded-2xl border border-gray-100 shadow-sm; }
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #07402b; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg,#ffc800,#ff7a2a); border-radius: 3px; }
