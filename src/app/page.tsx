@@ -12,14 +12,18 @@ import {
 // ── Données ────────────────────────────────────────────────────────────────
 
 const CATEGORIES = [
-  { id: "alimentation", label: "Alimentation",    emoji: "🥗", count: 124 },
-  { id: "vetements",    label: "Vêtements",        emoji: "👗", count: 87  },
-  { id: "electronique", label: "Électronique",     emoji: "📱", count: 63  },
-  { id: "maison",       label: "Maison & Déco",    emoji: "🏠", count: 51  },
-  { id: "beaute",       label: "Beauté & Santé",   emoji: "💄", count: 45  },
-  { id: "services",     label: "Services",          emoji: "🔧", count: 38  },
-  { id: "chaussures",   label: "Chaussures",        emoji: "👟", count: 29  },
-  { id: "autres",       label: "Autres",            emoji: "📦", count: 72  },
+  { id: "alimentation", label: "Alimentation",      count: 124, img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=200&h=200&q=80" },
+  { id: "vetements",    label: "Vêtements & Mode",  count: 87,  img: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=200&h=200&q=80" },
+  { id: "electronique", label: "Électronique",      count: 63,  img: "https://images.unsplash.com/photo-1468495244123-6c6c332eeece?auto=format&fit=crop&w=200&h=200&q=80" },
+  { id: "maison",       label: "Maison & Déco",     count: 51,  img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=200&h=200&q=80" },
+  { id: "beaute",       label: "Beauté & Santé",    count: 45,  img: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=200&h=200&q=80" },
+  { id: "telephonie",   label: "Téléphonie",        count: 38,  img: "https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?auto=format&fit=crop&w=200&h=200&q=80" },
+  { id: "chaussures",   label: "Chaussures",        count: 29,  img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=200&h=200&q=80" },
+  { id: "artisanat",    label: "Artisanat & Bijoux",count: 34,  img: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=200&h=200&q=80" },
+  { id: "sport",        label: "Sport & Loisirs",   count: 22,  img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=200&h=200&q=80" },
+  { id: "livres",       label: "Livres & Papeterie",count: 18,  img: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=200&h=200&q=80" },
+  { id: "jouets",       label: "Jouets & Bébés",    count: 25,  img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=200&h=200&q=80" },
+  { id: "autres",       label: "Autres",            count: 72,  img: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=200&h=200&q=80" },
 ];
 
 const CANTINES = [
@@ -185,20 +189,38 @@ export default function HomePage() {
       </div>
 
       {/* ── CATÉGORIES ────────────────────────────────────────────────── */}
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="section-title text-center mb-8">Toutes les catégories</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3">
+      <section className="py-16 bg-[#0c0c0c]">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-white text-2xl font-black text-center mb-12 tracking-tight">
+            Catégories
+          </h2>
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-x-4 gap-y-10">
             {CATEGORIES.map(cat => (
-              <button key={cat.id}
+              <button
+                key={cat.id}
                 onClick={() => setCatActive(cat.id === catActive ? "tous" : cat.id)}
-                className={`flex flex-col items-center gap-2 p-3 rounded-2xl border-2 transition-all ${
-                  catActive === cat.id ? "border-vert-600 bg-vert-50 shadow-md" : "border-gray-100 bg-white hover:border-vert-300"
-                }`}
+                className="flex flex-col items-center gap-3 group"
               >
-                <span className="text-3xl">{cat.emoji}</span>
-                <span className="text-xs font-semibold text-gray-700 text-center leading-tight">{cat.label}</span>
-                <span className="text-xs text-gray-400">{cat.count}</span>
+                {/* Cercle image */}
+                <div className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden transition-all duration-200
+                  ${catActive === cat.id
+                    ? "ring-2 ring-[#ffc800] ring-offset-2 ring-offset-[#0c0c0c] scale-105 shadow-lg shadow-[#ffc800]/25"
+                    : "ring-1 ring-white/10 group-hover:ring-white/30 group-hover:scale-105"
+                  }`}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={cat.img}
+                    alt={cat.label}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Label */}
+                <span className={`text-xs font-semibold text-center leading-snug transition-colors max-w-[80px]
+                  ${catActive === cat.id ? "text-[#ffc800]" : "text-gray-300 group-hover:text-white"}`}
+                >
+                  {cat.label}
+                </span>
               </button>
             ))}
           </div>
@@ -559,7 +581,7 @@ export default function HomePage() {
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-1.5">Catégorie</label>
                   <select className="input-field">
-                    {CATEGORIES.map(c => <option key={c.id} value={c.id}>{c.emoji} {c.label}</option>)}
+                    {CATEGORIES.map(c => <option key={c.id} value={c.id}>{c.label}</option>)}
                   </select>
                 </div>
               </div>
