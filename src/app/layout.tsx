@@ -22,17 +22,17 @@ export const metadata: Metadata = {
     "commerce mouride",
     "portail commercial Touba",
   ],
-  metadataBase: new URL("https://marche-ocass.vercel.app"),
+  metadataBase: new URL("https://marche-ocass-touba-visuel.vercel.app"),
   openGraph: {
     title: "MARCHÉ OCASS — Le portail commercial de Touba",
     description: "Ouvrez votre cantine en ligne — vendez à Touba et partout au Sénégal. À partir de 5 000 F CFA/mois.",
-    url: "https://marche-ocass.vercel.app",
+    url: "https://marche-ocass-touba-visuel.vercel.app",
     siteName: "MARCHÉ OCASS",
     locale: "fr_SN",
     type: "website",
     images: [
       {
-        url: "https://marche-ocass.vercel.app/logo-marche-ocass.svg",
+        url: "https://marche-ocass-touba-visuel.vercel.app/logo-marche-ocass.svg",
         width: 480,
         height: 140,
         alt: "MARCHÉ OCASS — Portail commercial de Touba",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MARCHÉ OCASS — Le portail commercial de Touba",
     description: "Ouvrez votre cantine en ligne — vendez à Touba et partout au Sénégal. À partir de 5 000 F CFA/mois.",
-    images: ["https://marche-ocass.vercel.app/logo-marche-ocass.svg"],
+    images: ["https://marche-ocass-touba-visuel.vercel.app/logo-marche-ocass.svg"],
   },
 };
 
